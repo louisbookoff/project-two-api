@@ -10,20 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307180133) do
+ActiveRecord::Schema.define(version: 20180307223304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "confirmed_trips", force: :cascade do |t|
-    t.integer "trip_id"
-    t.integer "driver_id"
-    t.integer "organizer_id"
-    t.datetime "trip_info"
-    t.text "passengers"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "examples", force: :cascade do |t|
     t.text "text", null: false
@@ -31,6 +21,18 @@ ActiveRecord::Schema.define(version: 20180307180133) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_examples_on_user_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "pick_up_location"
+    t.string "drop_off_location"
+    t.integer "passengers"
+    t.datetime "trip_start"
+    t.datetime "trip_end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,4 +46,5 @@ ActiveRecord::Schema.define(version: 20180307180133) do
   end
 
   add_foreign_key "examples", "users"
+  add_foreign_key "trips", "users"
 end
