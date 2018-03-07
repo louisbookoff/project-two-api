@@ -1,0 +1,2 @@
+class ConfirmedTrip < ApplicationRecord
+end
