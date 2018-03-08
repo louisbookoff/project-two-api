@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   # # If you hear a PATCH to /confirmed_trips/SOMETHING
   # # Save that SOMETHING as a value in the params hash with the key of `id`
   # # Then route that request to the ConfirmedTripsController -> UPDATE action
-  # patch '/confirmed_trips:id' => 'confirmed_trips#update'
+  # patch '/trips:id' => 'trips#update'
   #
   # # if you hear a POST /confirmed_trips
   # # Then route that request to the ConfirmedTripsController -> Create action
