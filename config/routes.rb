@@ -31,5 +31,4 @@ Rails.application.routes.draw do
   # # Then route that request to the ConfirmedTripsController -> Create action
   # # Use the json that was passed in the request to create the new docto
   # post '/confirmed_trips' => 'confirmed_trips#create'
-
 end
