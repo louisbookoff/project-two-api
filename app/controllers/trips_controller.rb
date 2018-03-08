@@ -3,7 +3,7 @@ class TripsController < ProtectedController
 
   # GET /trips
   def index
-    @trips = Trip.all
+    @trips = current_user.trips.all
 
     render json: @trips
   end
